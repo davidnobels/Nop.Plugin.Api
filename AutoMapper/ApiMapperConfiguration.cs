@@ -10,7 +10,6 @@ using Nop.Core.Domain.Localization;
 using Nop.Core.Domain.Messages;
 using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Stores;
-using Nop.Core.Domain.Topics;
 using Nop.Core.Infrastructure.Mapper;
 using Nop.Plugin.Api.Areas.Admin.Models;
 using Nop.Plugin.Api.Domain;
@@ -30,7 +29,6 @@ using Nop.Plugin.Api.DTO.Products;
 using Nop.Plugin.Api.DTO.ShoppingCarts;
 using Nop.Plugin.Api.DTO.SpecificationAttributes;
 using Nop.Plugin.Api.DTO.Stores;
-using Nop.Plugin.Api.DTO.Topics;
 using Nop.Plugin.Api.MappingExtensions;
 
 namespace Nop.Plugin.Api.AutoMapper
@@ -72,7 +70,6 @@ namespace Nop.Plugin.Api.AutoMapper
             CreateOrderEntityToOrderDtoMap();
 
             CreateProductMap();
-
 
             CreateMap<ProductAttributeValue, ProductAttributeValueDto>();
 

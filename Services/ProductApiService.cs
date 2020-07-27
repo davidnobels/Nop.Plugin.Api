@@ -4,7 +4,7 @@ using System.Linq;
 using Nop.Core.Data;
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Vendors;
-using Nop.Plugin.Api.DataStructures;
+using Nop.Plugin.Api.DataStructures; 
 using Nop.Plugin.Api.Infrastructure;
 using Nop.Services.Stores;
 
@@ -136,6 +136,11 @@ namespace Nop.Plugin.Api.Services
                         join productCategoryMapping in categoryMappingsForProduct on product.Id equals productCategoryMapping.ProductId
                         select product;
             }
+
+            query = from product in query
+                    join productCategoryMapping in _productCategoryMappingRepository.Table 
+                    on product.Id equals productCategoryMapping.ProductId
+                    select product;
 
             query = query.OrderBy(product => product.Id);
 

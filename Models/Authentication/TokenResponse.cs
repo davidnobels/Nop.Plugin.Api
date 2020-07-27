@@ -9,13 +9,21 @@ namespace Nop.Plugin.Api.Models.Authentication
             ErrorDescription = errorDescription;
         }
 
-        public TokenResponse(string accessToken, long expiresInSeconds, string tokenType = "Bearer")
+        public TokenResponse(string accessToken, long expiresInSeconds, string email, int id, bool active, string tokenType = "Bearer")
         {
             AccessToken = accessToken;
             ExpiresInSeconds = expiresInSeconds;
             TokenType = tokenType;
+            Email = email;
+            Id = id;
+            Active = active;
         }
-
+        [JsonProperty("id")]
+        public int Id { get; set; }
+        [JsonProperty("email")]
+        public string Email { get; set; }
+        [JsonProperty("active")]
+        public bool Active { get; set; }
         [JsonProperty("access_token")]
         public string AccessToken { get; set; }
 

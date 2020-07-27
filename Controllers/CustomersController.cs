@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Net;
+using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nop.Core.Domain.Customers;
 using Nop.Core.Infrastructure;
@@ -100,9 +102,9 @@ namespace Nop.Plugin.Api.Controllers
         /// <response code="401">Unauthorized</response>
         [HttpGet]
         [Route("/api/customers")]
-        [ProducesResponseType(typeof(CustomersRootObject), (int) HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(ErrorsRootObject), (int) HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(CustomersRootObject), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorsRootObject), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
         [GetRequestsErrorInterceptorActionFilter]
         public IActionResult GetCustomers(CustomersParametersModel parameters)
         {
@@ -120,9 +122,9 @@ namespace Nop.Plugin.Api.Controllers
                 _customerApiService.GetCustomersDtos(parameters.CreatedAtMin, parameters.CreatedAtMax, parameters.Limit, parameters.Page, parameters.SinceId);
 
             var customersRootObject = new CustomersRootObject
-                                      {
-                                          Customers = allCustomers
-                                      };
+            {
+                Customers = allCustomers
+            };
 
             var json = JsonFieldsSerializer.Serialize(customersRootObject, parameters.Fields);
 
@@ -139,10 +141,10 @@ namespace Nop.Plugin.Api.Controllers
         /// <response code="401">Unauthorized</response>
         [HttpGet]
         [Route("/api/customers/{id}")]
-        [ProducesResponseType(typeof(CustomersRootObject), (int) HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(ErrorsRootObject), (int) HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(CustomersRootObject), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorsRootObject), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
         [GetRequestsErrorInterceptorActionFilter]
         public IActionResult GetCustomerById(int id, string fields = "")
         {
@@ -174,17 +176,17 @@ namespace Nop.Plugin.Api.Controllers
         /// <response code="401">Unauthorized</response>
         [HttpGet]
         [Route("/api/customers/count")]
-        [ProducesResponseType(typeof(CustomersCountRootObject), (int) HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.Unauthorized)]
-        [ProducesResponseType(typeof(ErrorsRootObject), (int) HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(CustomersCountRootObject), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(ErrorsRootObject), (int)HttpStatusCode.BadRequest)]
         public IActionResult GetCustomersCount()
         {
             var allCustomersCount = _customerApiService.GetCustomersCount();
 
             var customersCountRootObject = new CustomersCountRootObject
-                                           {
-                                               Count = allCustomersCount
-                                           };
+            {
+                Count = allCustomersCount
+            };
 
             return Ok(customersCountRootObject);
         }
@@ -197,9 +199,9 @@ namespace Nop.Plugin.Api.Controllers
         /// <response code="401">Unauthorized</response>
         [HttpGet]
         [Route("/api/customers/search")]
-        [ProducesResponseType(typeof(CustomersRootObject), (int) HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(ErrorsRootObject), (int) HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(CustomersRootObject), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorsRootObject), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
         public IActionResult Search(CustomersSearchParametersModel parameters)
         {
             if (parameters.Limit <= Constants.Configurations.MinLimit || parameters.Limit > Constants.Configurations.MaxLimit)
@@ -215,9 +217,9 @@ namespace Nop.Plugin.Api.Controllers
             var customersDto = _customerApiService.Search(parameters.Query, parameters.Order, parameters.Page, parameters.Limit);
 
             var customersRootObject = new CustomersRootObject
-                                      {
-                                          Customers = customersDto
-                                      };
+            {
+                Customers = customersDto
+            };
 
             var json = JsonFieldsSerializer.Serialize(customersRootObject, parameters.Fields);
 
@@ -225,10 +227,11 @@ namespace Nop.Plugin.Api.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [Route("/api/customers")]
-        [ProducesResponseType(typeof(CustomersRootObject), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(CustomersRootObject), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorsRootObject), 422)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
         public IActionResult CreateCustomer(
             [ModelBinder(typeof(JsonModelBinder<CustomerDto>))]
             Delta<CustomerDto> customerDelta)
@@ -309,11 +312,11 @@ namespace Nop.Plugin.Api.Controllers
 
         [HttpPut]
         [Route("/api/customers/{id}")]
-        [ProducesResponseType(typeof(CustomersRootObject), (int) HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(CustomersRootObject), (int)HttpStatusCode.OK)]
         [ProducesResponseType(typeof(ErrorsRootObject), 422)]
-        [ProducesResponseType(typeof(ErrorsRootObject), (int) HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(ErrorsRootObject), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
         public IActionResult UpdateCustomer(
             [ModelBinder(typeof(JsonModelBinder<CustomerDto>))]
             Delta<CustomerDto> customerDelta)
@@ -353,6 +356,7 @@ namespace Nop.Plugin.Api.Controllers
                     }
                     else
                     {
+                        currentCustomer.CustomerAddressMappings.Add(new CustomerAddressMapping { Address = addressEntity });
                         currentCustomer.Addresses.Add(addressEntity);
                     }
                 }
@@ -361,7 +365,7 @@ namespace Nop.Plugin.Api.Controllers
             CustomerService.UpdateCustomer(currentCustomer);
 
             InsertFirstAndLastNameGenericAttributes(customerDelta.Dto.FirstName, customerDelta.Dto.LastName, currentCustomer);
-
+            InsertDateOfBirthGenericAttributes(customerDelta.Dto.DateOfBirth, currentCustomer);
 
             if (!string.IsNullOrEmpty(customerDelta.Dto.LanguageId) && int.TryParse(customerDelta.Dto.LanguageId, out var languageId)
                                                                     && _languageService.GetLanguageById(languageId) != null)
@@ -411,6 +415,14 @@ namespace Nop.Plugin.Api.Controllers
                 updatedCustomer.LanguageId = languageIdGenericAttribute.Value;
             }
 
+            var dateOfBirthGenericAttribute = _genericAttributeService.GetAttributesForEntity(currentCustomer.Id, typeof(Customer).Name)
+                                                         .FirstOrDefault(x => x.Key == "DateOfBirth");
+
+            if (dateOfBirthGenericAttribute != null)
+            {
+                updatedCustomer.DateOfBirth = DateTime.Parse(dateOfBirthGenericAttribute.Value);
+            }
+
             //activity log
             CustomerActivityService.InsertActivity("UpdateCustomer", LocalizationService.GetResource("ActivityLog.UpdateCustomer"), currentCustomer);
 
@@ -426,10 +438,10 @@ namespace Nop.Plugin.Api.Controllers
         [HttpDelete]
         [Route("/api/customers/{id}")]
         [GetRequestsErrorInterceptorActionFilter]
-        [ProducesResponseType(typeof(void), (int) HttpStatusCode.OK)]
-        [ProducesResponseType(typeof(ErrorsRootObject), (int) HttpStatusCode.BadRequest)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.NotFound)]
-        [ProducesResponseType(typeof(string), (int) HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(void), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(ErrorsRootObject), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
         public IActionResult DeleteCustomer(int id)
         {
             if (id <= 0)
@@ -476,6 +488,15 @@ namespace Nop.Plugin.Api.Controllers
             }
         }
 
+        private void InsertDateOfBirthGenericAttributes(DateTime? dateOfBirth, Customer newCustomer)
+        {
+            // we assume that if the date of birth is not sent then it will be null and in this case we don't want to update it
+            if (dateOfBirth != null)
+            {
+                _genericAttributeService.SaveAttribute(newCustomer, NopCustomerDefaults.DateOfBirthAttribute, dateOfBirth);
+            }
+        }
+
         private void AddValidRoles(Delta<CustomerDto> customerDelta, Customer currentCustomer)
         {
             var allCustomerRoles = CustomerService.GetAllCustomerRoles(true);
@@ -487,9 +508,9 @@ namespace Nop.Plugin.Api.Controllers
                     if (currentCustomer.CustomerCustomerRoleMappings.Count(mapping => mapping.CustomerRoleId == customerRole.Id) == 0)
                     {
                         currentCustomer.CustomerCustomerRoleMappings.Add(new CustomerCustomerRoleMapping
-                                                                         {
-                                                                             CustomerRole = customerRole
-                                                                         });
+                        {
+                            CustomerRole = customerRole
+                        });
                     }
                 }
                 else
@@ -534,30 +555,30 @@ namespace Nop.Plugin.Api.Controllers
         {
             // TODO: call this method before inserting the customer.
             var customerPassword = new CustomerPassword
-                                   {
-                                       Customer = customer,
-                                       PasswordFormat = CustomerSettings.DefaultPasswordFormat,
-                                       CreatedOnUtc = DateTime.UtcNow
-                                   };
+            {
+                Customer = customer,
+                PasswordFormat = CustomerSettings.DefaultPasswordFormat,
+                CreatedOnUtc = DateTime.UtcNow
+            };
 
             switch (CustomerSettings.DefaultPasswordFormat)
             {
                 case PasswordFormat.Clear:
-                {
-                    customerPassword.Password = newPassword;
-                }
+                    {
+                        customerPassword.Password = newPassword;
+                    }
                     break;
                 case PasswordFormat.Encrypted:
-                {
-                    customerPassword.Password = _encryptionService.EncryptText(newPassword);
-                }
+                    {
+                        customerPassword.Password = _encryptionService.EncryptText(newPassword);
+                    }
                     break;
                 case PasswordFormat.Hashed:
-                {
-                    var saltKey = _encryptionService.CreateSaltKey(5);
-                    customerPassword.PasswordSalt = saltKey;
-                    customerPassword.Password = _encryptionService.CreatePasswordHash(newPassword, saltKey, CustomerSettings.HashedPasswordFormat);
-                }
+                    {
+                        var saltKey = _encryptionService.CreateSaltKey(5);
+                        customerPassword.PasswordSalt = saltKey;
+                        customerPassword.Password = _encryptionService.CreatePasswordHash(newPassword, saltKey, CustomerSettings.HashedPasswordFormat);
+                    }
                     break;
             }
 
