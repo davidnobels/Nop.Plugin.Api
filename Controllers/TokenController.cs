@@ -109,20 +109,20 @@ namespace Nop.Plugin.Api.Controllers
                          {
                              new Claim(JwtRegisteredClaimNames.Nbf, new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds().ToString()),
                              new Claim(JwtRegisteredClaimNames.Exp, expiresInSeconds.ToString()),
-                             new Claim(ClaimTypes.Email, customer.Email),
-                             new Claim(ClaimTypes.NameIdentifier, customer.CustomerGuid.ToString()),
-                             _customerSettings.UsernamesEnabled
-                                 ? new Claim(ClaimTypes.Name, customer.Username)
-                                 : new Claim(ClaimTypes.Name, customer.Email)
+                             new Claim(JwtRegisteredClaimNames.Email, customer.Email),
+                             new Claim(JwtRegisteredClaimNames.NameId, customer.Id.ToString())
                          };
 
             var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_apiConfiguration.SecurityKey)),
                                                             SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(new JwtHeader(signingCredentials), new JwtPayload(claims));
             var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
+            var email = customer.Email;
+            var id = customer.Id;
+            var active = customer.Active;
 
-
-            return new TokenResponse(accessToken, expiresInSeconds);
+            return new TokenResponse(accessToken, expiresInSeconds, email, id, active);
         }
+
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Nop.Core.Domain.Catalog;
 using Nop.Core.Domain.Discounts;
@@ -30,6 +31,7 @@ using Nop.Services.Stores;
 
 namespace Nop.Plugin.Api.Controllers
 {
+    [AllowAnonymous]
     public class ProductsController : BaseApiController
     {
         private readonly IDTOHelper _dtoHelper;
@@ -153,6 +155,38 @@ namespace Nop.Plugin.Api.Controllers
         [ProducesResponseType(typeof(string), (int) HttpStatusCode.NotFound)]
         [GetRequestsErrorInterceptorActionFilter]
         public IActionResult GetProductById(int id, string fields = "")
+        {
+            if (id <= 0)
+            {
+                return Error(HttpStatusCode.BadRequest, "id", "invalid id");
+            }
+
+            var product = _productApiService.GetProductById(id);
+
+            if (product == null)
+            {
+                return Error(HttpStatusCode.NotFound, "product", "not found");
+            }
+
+            var productDto = _dtoHelper.PrepareProductDTO(product);
+
+            var productsRootObject = new ProductsRootObjectDto();
+
+            productsRootObject.Products.Add(productDto);
+
+            var json = JsonFieldsSerializer.Serialize(productsRootObject, fields);
+
+            return new RawJsonActionResult(json);
+        }
+
+        [HttpGet]
+        [Route("/api/productsx/{id}")]
+        [ProducesResponseType(typeof(ProductsRootObjectDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.Unauthorized)]
+        [ProducesResponseType(typeof(ErrorsRootObject), (int)HttpStatusCode.BadRequest)]
+        [ProducesResponseType(typeof(string), (int)HttpStatusCode.NotFound)]
+        [GetRequestsErrorInterceptorActionFilter]
+        public IActionResult GetProductByIds(int id, string fields = "")
         {
             if (id <= 0)
             {
