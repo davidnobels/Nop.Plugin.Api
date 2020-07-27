@@ -5,14 +5,13 @@ using Nop.Plugin.Api.DTO.ShoppingCarts;
 
 namespace Nop.Plugin.Api.DTO.Customers
 {
-    [JsonObject(Title = "customer")]
+    [JsonObject(Title = "customer", ItemNullValueHandling = NullValueHandling.Ignore)]
     //[Validator(typeof(CustomerDtoValidator))]
     public class CustomerDto : BaseCustomerDto
     {
         private ICollection<AddressDto> _addresses;
         private ICollection<ShoppingCartItemDto> _shoppingCartItems;
 
-        [JsonIgnore]
         [JsonProperty("password")]
         public string Password { get; set; }
 

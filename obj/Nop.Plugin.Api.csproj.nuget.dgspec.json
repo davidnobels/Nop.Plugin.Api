@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\moonlay\\template polosan\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj": {}
+    "D:\\dev\\mujuweb\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj": {}
   },
   "projects": {
-    "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+    "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
       "version": "4.2.0",
       "restore": {
-        "projectUniqueName": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
+        "projectUniqueName": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
         "projectName": "Nop.Core",
-        "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
-        "packagesPath": "C:\\Users\\acer swift 3\\.nuget\\packages\\",
-        "outputPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\obj\\",
+        "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj",
+        "packagesPath": "C:\\Users\\Christmemory Sitorus\\.nuget\\packages\\",
+        "outputPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer swift 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Christmemory Sitorus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -98,24 +95,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+    "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
       "version": "4.2.0",
       "restore": {
-        "projectUniqueName": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
+        "projectUniqueName": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
         "projectName": "Nop.Data",
-        "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
-        "packagesPath": "C:\\Users\\acer swift 3\\.nuget\\packages\\",
-        "outputPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\obj\\",
+        "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\Nop.Data.csproj",
+        "packagesPath": "C:\\Users\\Christmemory Sitorus\\.nuget\\packages\\",
+        "outputPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer swift 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Christmemory Sitorus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -128,8 +122,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               }
             }
           }
@@ -172,24 +166,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+    "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
       "version": "4.2.0",
       "restore": {
-        "projectUniqueName": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
+        "projectUniqueName": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
         "projectName": "Nop.Services",
-        "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
-        "packagesPath": "C:\\Users\\acer swift 3\\.nuget\\packages\\",
-        "outputPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Services\\obj\\",
+        "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Services\\Nop.Services.csproj",
+        "packagesPath": "C:\\Users\\Christmemory Sitorus\\.nuget\\packages\\",
+        "outputPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Services\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer swift 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Christmemory Sitorus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -202,11 +193,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               },
-              "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
+              "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
               }
             }
           }
@@ -265,24 +256,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\moonlay\\template polosan\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj": {
+    "D:\\dev\\mujuweb\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj": {
       "version": "0.0.1-local",
       "restore": {
-        "projectUniqueName": "D:\\moonlay\\template polosan\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj",
+        "projectUniqueName": "D:\\dev\\mujuweb\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj",
         "projectName": "Nop.Plugin.Api",
-        "projectPath": "D:\\moonlay\\template polosan\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj",
-        "packagesPath": "C:\\Users\\acer swift 3\\.nuget\\packages\\",
-        "outputPath": "D:\\moonlay\\template polosan\\src\\Plugins\\Nop.Plugin.Api\\obj\\",
+        "projectPath": "D:\\dev\\mujuweb\\src\\Plugins\\Nop.Plugin.Api\\Nop.Plugin.Api.csproj",
+        "packagesPath": "C:\\Users\\Christmemory Sitorus\\.nuget\\packages\\",
+        "outputPath": "D:\\dev\\mujuweb\\src\\Plugins\\Nop.Plugin.Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer swift 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Christmemory Sitorus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -295,11 +283,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               },
-              "D:\\moonlay\\template polosan\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
+              "D:\\dev\\mujuweb\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj"
               }
             }
           }
@@ -346,24 +334,21 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\moonlay\\template polosan\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
+    "D:\\dev\\mujuweb\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj": {
       "version": "4.2.0",
       "restore": {
-        "projectUniqueName": "D:\\moonlay\\template polosan\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
+        "projectUniqueName": "D:\\dev\\mujuweb\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
         "projectName": "Nop.Web.Framework",
-        "projectPath": "D:\\moonlay\\template polosan\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
-        "packagesPath": "C:\\Users\\acer swift 3\\.nuget\\packages\\",
-        "outputPath": "D:\\moonlay\\template polosan\\src\\Presentation\\Nop.Web.Framework\\obj\\",
+        "projectPath": "D:\\dev\\mujuweb\\src\\Presentation\\Nop.Web.Framework\\Nop.Web.Framework.csproj",
+        "packagesPath": "C:\\Users\\Christmemory Sitorus\\.nuget\\packages\\",
+        "outputPath": "D:\\dev\\mujuweb\\src\\Presentation\\Nop.Web.Framework\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\acer swift 3\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Christmemory Sitorus\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -376,14 +361,14 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
+              "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Core\\Nop.Core.csproj"
               },
-              "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
+              "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\Nop.Data.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Data\\Nop.Data.csproj"
               },
-              "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
-                "projectPath": "D:\\moonlay\\template polosan\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
+              "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Services\\Nop.Services.csproj": {
+                "projectPath": "D:\\dev\\mujuweb\\src\\Libraries\\Nop.Services\\Nop.Services.csproj"
               }
             }
           }
@@ -430,7 +415,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using Nop.Core.Domain.Catalog;
 using Nop.Plugin.Api.Attributes;
 using Nop.Plugin.Api.DTO.Base;
+using Nop.Plugin.Api.DTO.Categories;
 using Nop.Plugin.Api.DTO.Images;
 using Nop.Plugin.Api.DTO.Languages;
 using Nop.Plugin.Api.DTO.SpecificationAttributes;
@@ -15,7 +16,7 @@ namespace Nop.Plugin.Api.DTO.Products
     public class ProductDto : BaseDto
     {
         private int? _productTypeId;
-
+        private List<CategoryDto> _categories;
         /// <summary>
         ///     Gets or sets the values indicating whether this product is visible in catalog or search results.
         ///     It's used when this product is associated to some "grouped" one
@@ -583,5 +584,18 @@ namespace Nop.Plugin.Api.DTO.Products
 
         [JsonProperty("se_name")]
         public string SeName { get; set; }
+
+        [JsonProperty("categories")]
+        public List<CategoryDto> Categories
+        {
+            get
+            {
+                return _categories;
+            }
+            set
+            {
+                _categories = value;
+            }
+        }
     }
 }
