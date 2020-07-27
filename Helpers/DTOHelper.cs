@@ -6,6 +6,7 @@ using Nop.Core.Domain.Localization;
 using Nop.Core.Domain.Media;
 using Nop.Core.Domain.Orders;
 using Nop.Core.Domain.Stores;
+using Nop.Core.Domain.Topics;
 using Nop.Plugin.Api.DTO.Categories;
 using Nop.Plugin.Api.DTO.Images;
 using Nop.Plugin.Api.DTO.Languages;
@@ -17,6 +18,7 @@ using Nop.Plugin.Api.DTO.Products;
 using Nop.Plugin.Api.DTO.ShoppingCarts;
 using Nop.Plugin.Api.DTO.SpecificationAttributes;
 using Nop.Plugin.Api.DTO.Stores;
+using Nop.Plugin.Api.DTO.Topics;
 using Nop.Plugin.Api.MappingExtensions;
 using Nop.Plugin.Api.Services;
 using Nop.Services.Catalog;
@@ -92,8 +94,6 @@ namespace Nop.Plugin.Api.Helpers
                                                       .ToList();
             productDto.Tags = _productTagService.GetAllProductTagsByProductId(product.Id).Select(tag => tag.Name)
                                                 .ToList();
-
-            productDto.Categories = product.ProductCategories.Select(c => PrepareCategoryDTO(c.Category)).ToList();
 
             productDto.AssociatedProductIds =
                 _productService.GetAssociatedProducts(product.Id, showHidden: true)
@@ -437,6 +437,13 @@ namespace Nop.Plugin.Api.Helpers
                     productDto.ProductSpecificationAttributes.Add(productSpecificationAttributeDto);
                 }
             }
+        }
+
+        public TopicDto PrepareTopicToDTO(Topic topic)
+        {
+            var topicDto = topic.ToDto();
+
+            return topicDto;
         }
     }
 }
